@@ -16,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('cliente')->group(function(){
     Route::get('/', [clientesController::class, 'index'])->name('cliente-index');
     Route::get('/create', [clientesController::class, 'create'])->name('cliente-create');
+    Route::get('/{id}/edit', [clientesController::class, 'edit'])->where('id', '[0-9]+')->name('cliente-edit');
     Route::post('/', [clientesController::class, 'store'])->name('cliente-store');
+    Route::put('/{id}', [clientesController::class, 'update'])->name('cliente-update');
+    Route::delete('/{id}', [clientesController::class, 'delete'])->where('id', '[0-9]+')->name('cliente-delete');
 });
 
 Route::fallback(function(){
