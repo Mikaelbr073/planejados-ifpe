@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('cpf', 40)->nullable();
             $table->timestamps();
         });
+
+
     }
 
     /**
@@ -29,7 +31,8 @@ return new class extends Migration
      * @return void
      */
     public function down()
-    {
-        Schema::dropIfExists('cliente');
+    {            
+      
+        Schema::dropIfExists('clientes');
     }
 };

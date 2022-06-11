@@ -13,7 +13,6 @@ class cliente extends Model
         'nome',
         'telefone',
         'email',
-        'cpf',
-        
+        'cpf', 
     ];
 }

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Listagem')
+@section('title', 'Cliente')
 @section('content')
 <div>
  <a href="{{route('cliente-create')}}" class="btn btn-success btn-lg mt-3 mr-3 mb-3 float-right">Novo Cliente</a>

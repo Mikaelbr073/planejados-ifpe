@@ -9,6 +9,14 @@
     <title>@yield('title')</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{route('cliente-index')}}">Cliente</a>
+    <a class="navbar-brand" href="{{route('projeto-index')}}">Projetos</a>
+    <a class="navbar-brand" href="#">Dashboard de Projetos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    </nav>
     @yield('content')
 </body>
 </html>

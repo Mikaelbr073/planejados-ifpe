@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\clientesController;
+use App\Http\Controllers\loginController;
+use App\Http\Controllers\projetosController;
+use App\Models\projeto;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +15,26 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+
+
+
 */
+
+Route::prefix('login')->group(function(){
+    Route::get('/', [loginController::class, 'index'])->name('login-index');
+    Route::post('/', [loginController::class, 'autenticar'])->name('login-autenticar');
+    
+});
+
+
+
+Route::prefix('projeto')->group(function(){
+    Route::get('/', [projetosController::class, 'index'])->name('projeto-index');
+    Route::get('/create', [projetosController::class, 'create'])->name('projeto-create');
+    Route::post('/', [clientesController::class, 'storeProjeto'])->name('projeto-store');
+});
+
+
 Route::prefix('cliente')->group(function(){
     Route::get('/', [clientesController::class, 'index'])->name('cliente-index');
     Route::get('/create', [clientesController::class, 'create'])->name('cliente-create');
@@ -21,6 +43,8 @@ Route::prefix('cliente')->group(function(){
     Route::put('/{id}', [clientesController::class, 'update'])->name('cliente-update');
     Route::delete('/{id}', [clientesController::class, 'delete'])->where('id', '[0-9]+')->name('cliente-delete');
 });
+
+
 
 Route::fallback(function(){
     return "Essa págima não existe";
