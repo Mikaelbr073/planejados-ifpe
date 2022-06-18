@@ -5,54 +5,51 @@
 <div class="container">
     <h1 class="mt-5">Novo Projeto</h1>
     <hr>
-    <form action="{{route('projeto-store')}}" method="POST">
+    <form action="{{route('projeto-update', ['id'=> $projeto->id]) }}" method="POST">
       @csrf
-        <div class="form-grup">
-
+          <div class="form-group">
+            <label for="cliente_id">Selecione o cliente: </label>
+            <select class="form-control" name="cliente_id">
+                <option value="{{  $projeto->cliente_id }}">{{$projeto->cliente_id}}</option>
+            </select>
+          </div>
             <div class="form-group">
-              <label for="cliente">Selecione o cliente: </label>
-                <select class="form-control" name="cliente_id">
-                <option>--Selecione o cliente--</option>
-                  @foreach($clientes as $cliente)
-                    <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option>
-                  @endforeach
-                </select>
-            </div>
-                
-            <div class="form-group">
-              <label for="telefone">Data Inicial do Projeto: </label>
-              <input class="form-control" type="text" name="DataInicialDoProjeto" placeholder="00/00/0000" 
-              aria-label="DataInicialDoProjeto" onkeypress="$(this).mask('00/00/0000');"required>
+              <label>Data Inicial do Projeto: </label>
+              <input class="form-control"type="text" name="DataInicialDoProjeto" placeholder="00/00/0000" 
+              aria-label="DataInicialDoProjet" onkeypress="$(this).mask('00/00/0000');" required value="{{ $projeto->DataInicialDoProjeto}}">
             </div>
 
             <div class="form-group">
-              <label for="email">Data de Entrega: </label>
-              <input class="form-control" type="text" name="DataDeEntrega" placeholder="00/00/0000" 
-              aria-label="DataDeEntregao" onkeypress="$(this).mask('00/00/0000');"required>
+              <label>Data de Entrega: </label>
+              <input class="form-control"type="text" name="DataDeEntrega" placeholder="00/00/0000" 
+              aria-label="DataDeEntregao" onkeypress="$(this).mask('00/00/0000');" required value="{{ $projeto->DataDeEntrega}}">
             </div>
 
             <div class="form-group">
               <label for="statusProducao">Status de produção: </label>
-              <select class="form-control" readonly name="statusDeProdução">
+              <select class="form-control" value="{{ $projeto->statusDeProdução }}" name="statusDeProdução">
                 <option value="1">Pedido Feito</option>
+                <option value="2">Em Produção</option>
+                <option value="3">A Caminho</option>
+                <option value="4">Entregue</option>
               </select>
             </div>
+
             <div class="form-group">
-                <label for="cpf">Cidade:</label>
-                <input class="form-control"type="text" name="cidade" placeholder="Nome da cidade.."required>
+                <label>Cidade:</label>
+                <input class="form-control"type="text" name="cidade" placeholder="Digite a cidade.."required value="{{ $projeto->cidade }}">
             </div>
             <div class="form-group">
-                <label for="cpf">Rua:</label>
-                <input class="form-control"type="text" name="rua" placeholder="Nome da rua.."required>
+                <label>Rua:</label>
+                <input class="form-control"type="text" name="rua" placeholder="Digite a rua." required value="{{ $projeto->rua }}">
             </div>
             <div class="form-group">
-                <label for="cpf">Numero:</label>
-                <input class="form-control"type="num" name="numero" placeholder="Número da casa.."required>
+                <label>Numero:</label>
+                <input class="form-control"type="text" name="numero" placeholder="Digite o número da casa.."required value="{{ $projeto->numero }}">
             </div>
             <div class="form-group">
-            <label for="statusProducao">Status de produção: </label>
-                <select class="form-control" name="uf" required>
-                    <option>--Selecione o Estado--</option>
+                <label for="statusProducao">Status de produção: </label>
+                <select class="form-control" value="{{ $projeto->uf }}" name="uf" required>
                     <option value="AC">Acre</option>
                     <option value="AL">Alagoas</option>
                     <option value="AP">Amapá</option>

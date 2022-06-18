@@ -10,6 +10,7 @@ class projeto extends Model
     use HasFactory;
 
     protected $fillable = [
+        'cliente_id',
         'DataInicialDoProjeto',
         'DataDeEntrega',
         'statusDeProdução',

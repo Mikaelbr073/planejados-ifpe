@@ -42,9 +42,9 @@
             </button>
           </form>
       </td>
-      <td>
       
-      </td>
+
+      </tr>
     @endforeach
   </tbody>
 </table>

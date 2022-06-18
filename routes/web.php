@@ -31,7 +31,10 @@ Route::prefix('login')->group(function(){
 Route::prefix('projeto')->group(function(){
     Route::get('/', [projetosController::class, 'index'])->name('projeto-index');
     Route::get('/create', [projetosController::class, 'create'])->name('projeto-create');
-    Route::post('/', [clientesController::class, 'storeProjeto'])->name('projeto-store');
+    Route::post('/', [projetosController::class, 'store'])->name('projeto-store');
+    Route::delete('/{id}', [projetosController::class, 'delete'])->where('id', '[0-9]+')->name('projeto-delete');
+    Route::get('/{id}/edit', [projetosController::class, 'edit'])->where('id', '[0-9]+')->name('projeto-edit');
+    Route::put('/{id}', [projetosController::class, 'update'])->name('projeto-update');
 });
 
 
@@ -47,7 +50,7 @@ Route::prefix('cliente')->group(function(){
 
 
 Route::fallback(function(){
-    return "Essa págima não existe";
+    return "Erro 404";
 });
 
 

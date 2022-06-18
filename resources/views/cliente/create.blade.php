@@ -15,17 +15,19 @@
 
             <div class="form-group">
               <label for="telefone">Telefone: </label>
-              <input class="form-control"type="text" name="telefone" placeholder="Digite seu telefone.." required>
+              <input class="form-control"type="text" name="telefone" placeholder="(00) 0.0000-0000" 
+              aria-label="cpf" onkeypress="$(this).mask('(00) 0.0000-0000');"  required>
             </div>
 
             <div class="form-group">
               <label for="email">E-mail: </label>
-              <input class="form-control"type="text" name="email" placeholder="Digite seu E-mail.." required>
+              <input class="form-control"type="email" name="email" placeholder="Digite seu E-mail.." required>
             </div>
 
             <div class="form-group">
                 <label for="cpf">CPF:</label>
-                <input class="form-control"type="text" name="cpf" placeholder="Digite seu cpf.."required>
+                <input class="form-control"type="text" name="cpf" placeholder="000.000.000-00" 
+                aria-label="cpf" onkeypress="$(this).mask('000.000.000-00');" required>
             </div>
               <br>  
             <div class="form-group">
