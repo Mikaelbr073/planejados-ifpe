@@ -45,10 +45,14 @@ class projetosController extends Controller
     }
     public function update(Request $request, $id){
         $data = [
-            'nome' => $request->nome,
-            'telefone' => $request->telefone,
-            'email' => $request->email,
-            'cpf' => $request->cpf,
+            'cliente_id'=> $request->cliente_id,
+            'DataInicialDoProjeto'=> $request->DataInicialDoProjeto,
+            'DataDeEntrega'=> $request->DataDeEntrega,
+            'statusDeProdução'=> $request->statusDeProdução,
+            'cidade'=> $request->cidade,
+            'rua'=> $request->rua,
+            'numero'=> $request->numero,
+            'uf'=> $request->uf
         ];
 
         projeto::where('id',$id)->update($data);

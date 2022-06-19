@@ -21,7 +21,7 @@ class projeto extends Model
     ];
 
     public function cliente(){
-        return $this->belongsTo('App/cliente');
+        return $this->belongsTo(cliente::class);
     }
 
 }

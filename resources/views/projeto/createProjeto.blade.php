@@ -50,7 +50,7 @@
                 <input class="form-control"type="num" name="numero" placeholder="Número da casa.."required>
             </div>
             <div class="form-group">
-            <label for="statusProducao">Status de produção: </label>
+            <label for="statusProducao">Estado: </label>
                 <select class="form-control" name="uf" required>
                     <option>--Selecione o Estado--</option>
                     <option value="AC">Acre</option>

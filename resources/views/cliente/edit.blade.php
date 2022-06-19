@@ -7,7 +7,7 @@
     <hr>
     <form action="{{route('cliente-update', ['id'=> $cliente->id]) }}" method="POST">
       @csrf
-      @method('PUT');
+      @method('PUT')
         <div class="form-grup">
             <div class="form-group">
               <label for="nome">Nome: </label>

@@ -23,7 +23,7 @@
     @foreach($projetos as $projeto)
     <tr>
       <th>{{$projeto->id}}</th>
-      <td>{{$projeto->cliente_id}}</td>
+      <td>{{$projeto->cliente->nome}}</td>
       <td>{{$projeto->DataInicialDoProjeto}}</td>
       <td>{{$projeto->DataDeEntrega}}</td>
       <td><?php

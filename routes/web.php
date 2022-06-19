@@ -5,6 +5,7 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\projetosController;
 use App\Models\projeto;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 
 */
+Route::prefix('dashbord')->group(function(){
+    Route::get('/', [dashbordController::class, 'index'])->name('dashbord-index');
+    
+});
 
 Route::prefix('login')->group(function(){
     Route::get('/', [loginController::class, 'index'])->name('login-index');
