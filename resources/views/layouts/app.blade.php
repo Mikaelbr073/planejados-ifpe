@@ -20,6 +20,6 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     </nav>
-    @yield('content')
+    @yield('content')  
 </body>
 </html>

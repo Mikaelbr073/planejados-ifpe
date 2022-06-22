@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\clientesController;
+use App\Http\Controllers\dashbordController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\projetosController;
 use App\Models\projeto;
@@ -20,6 +21,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 */
+
 Route::prefix('dashbord')->group(function(){
     Route::get('/', [dashbordController::class, 'index'])->name('dashbord-index');
     

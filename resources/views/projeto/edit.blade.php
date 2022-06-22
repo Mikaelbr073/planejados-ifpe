@@ -10,14 +10,14 @@
         @method('PUT')
           <div class="form-group">
             <label for="cliente_id">Selecione o cliente: </label>
-            <select class="form-control" name="cliente_id">
+            <select class="form-control" name="cliente_id" readonly>
                 <option value="{{  $projeto->cliente_id }}">{{$projeto->cliente->nome}}</option>
             </select>
           </div>
             <div class="form-group">
               <label>Data Inicial do Projeto: </label>
               <input class="form-control"type="text" name="DataInicialDoProjeto" placeholder="00/00/0000" 
-              aria-label="DataInicialDoProjet" onkeypress="$(this).mask('00/00/0000');" required value="{{ $projeto->DataInicialDoProjeto}}">
+              aria-label="DataInicialDoProjet" onkeypress="$(this).mask('00/00/0000');"  readonly required value="{{ $projeto->DataInicialDoProjeto}}">
             </div>
 
             <div class="form-group">
@@ -50,42 +50,35 @@
             </div>
             <div class="form-group">
                 <label for="uf">Status de produção: </label>
-                <select class="form-control" name="uf" required>
-                <?php $estadosBrasileiros = array(
-                'AC'=>'Acre',
-                'AL'=>'Alagoas',
-                'AP'=>'Amapá',
-                'AM'=>'Amazonas',
-                'BA'=>'Bahia',
-                'CE'=>'Ceará',
-                'DF'=>'Distrito Federal',
-                'ES'=>'Espírito Santo',
-                'GO'=>'Goiás',
-                'MA'=>'Maranhão',
-                'MT'=>'Mato Grosso',
-                'MS'=>'Mato Grosso do Sul',
-                'MG'=>'Minas Gerais',
-                'PA'=>'Pará',
-                'PB'=>'Paraíba',
-                'PR'=>'Paraná',
-                'PE'=>'Pernambuco',
-                'PI'=>'Piauí',
-                'RJ'=>'Rio de Janeiro',
-                'RN'=>'Rio Grande do Norte',
-                'RS'=>'Rio Grande do Sul',
-                'RO'=>'Rondônia',
-                'RR'=>'Roraima',
-                'SC'=>'Santa Catarina',
-                'SP'=>'São Paulo',
-                'SE'=>'Sergipe',
-                'TO'=>'Tocantins'
-                );
-                ?>
-                @foreach($estadosBrasileiros as $uf): ?>
-                  <option <?= $projeto->uf == 'Pará' ?? 'selected'?> >
-                      <?= $uf ?>
-                  </option>
-                @endforeach
+                <select class="form-control" value="{{ $projeto->uf }}"  name="uf" required>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                    <option value="EX">Estrangeiro</option>
                 </select>
             </div>
               <br>  

@@ -26,7 +26,8 @@
 
             <div class="form-group">
                 <label for="cpf">CPF:</label>
-                <input class="form-control"type="text" name="cpf" placeholder="Digite seu cpf.." value="{{ $cliente->cpf}}">
+                <input class="form-control"type="text" name="cpf" value="{{ $cliente->cpf}}" placeholder="000.000.000-00" 
+                aria-label="cpf" onkeypress="$(this).mask('000.000.000-00');" required  >
             </div>
               <br>  
             <div class="form-group">

@@ -4,11 +4,22 @@
 @section('content')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<div class="row">
-    <div class="col-4 ml-2 mt-4">
-        <canvas id="myChart" width="400" height="400"></canvas>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+        teste
+    <div>
     </div>
+    </div>
+        <div class="col-sm mt-5 shadow-lg p-3 mb-5 bg-white rounded" >
+             <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+     </div>
 </div>
+
+   
+  
 <script>
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
@@ -17,16 +28,9 @@ const myChart = new Chart(ctx, {
         labels: ['Pedido Feito','Em Produção', 'A caminho', 'Entregue'],
         datasets: [{
             label: 'Status dos Projetos',
-            data: [12, 100, 3, 5, 2, 3],
+            data: [<?php echo$status[0]; ?>, <?php echo$status[1]; ?>, 
+            <?php echo$status[2]; ?>, <?php echo$status[3]; ?>],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
                 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
