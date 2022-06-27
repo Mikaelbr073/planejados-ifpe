@@ -1,0 +1,44 @@
+.image{
+    width: 200px;
+    height: 200px;
+    box-shadow: 50px;
+}
+
+.image2{
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.texto2{
+    margin-left: 3px;
+}
+
+.image3{
+    width: 40px;
+    height: 40px;
+    margin-left: 190px;
+}
+
+.texto3{
+    margin-left: 160px;
+}
+
+.image4{
+    width: 40px;
+    height: 40px;
+    margin-left: 200px;
+}
+.texto4{
+    margin-left: 190px;
+}
+
+.image5{
+    width: 40px;
+    height: 40px;
+    margin-left: 220px;
+}
+
+.texto5{
+    margin-left: 210px;
+}

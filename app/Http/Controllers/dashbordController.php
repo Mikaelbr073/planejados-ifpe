@@ -15,7 +15,8 @@ class dashbordController extends Controller
        $emProducao = projeto::where('statusDeProdução', 2)->count();
        $aCaminho = projeto::where('statusDeProdução', 3)->count();
        $entregue = projeto::where('statusDeProdução', 4)->count();
-       $status = [$pedidoFeito, $emProducao, $aCaminho, $entregue];
-       return view('dashbord.dashbord',['status'=>$status]); 
+       $quantidaDeProjeto = projeto::count('id');
+       $status = [$pedidoFeito, $emProducao, $aCaminho, $entregue, $quantidaDeProjeto];
+       return view('dashbord.dashbord',['status'=>$status], ['quantidadeDeCliente'=>$quantidaDeDeCliente]); 
     }
 }

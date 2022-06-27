@@ -4,22 +4,43 @@
 @section('content')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
 <div class="container">
-  <div class="row">
-    <div class="col-sm">
-        teste
-    <div>
-    </div>
-    </div>
-        <div class="col-sm mt-5 shadow-lg p-3 mb-5 bg-white rounded" >
-             <canvas id="myChart" width="400" height="400"></canvas>
+    <div class="row">
+        <div class="col-sm mr-5 col-sm mt-5 mb-3 bg-white rounded">
+
+            <div class="row">
+                <div class="col-sm">
+                    <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                        <div class="card-header text-center">Clientes Cadastrados</div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{$quantidadeDeCliente}}</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                            <div class="card-header text-center">Total de Projetos</div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center">{{$status[4]}}</h5>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <img class="imagedash" src="/image/logo.png" alt="Logo">
+            </div>
+
         </div>
-     </div>
+
+
+        <div class="col-sm mt-5 shadow-lg mb-3 bg-white rounded" >
+            <canvas id="myChart" width="200" height="200"></canvas>
+        </div>
+
+    </div>
 </div>
 
-   
-  
 <script>
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
@@ -50,8 +71,4 @@ const myChart = new Chart(ctx, {
     }
 });
 </script>
-
-
-
-
 @endsection

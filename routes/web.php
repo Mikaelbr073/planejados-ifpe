@@ -4,6 +4,7 @@ use App\Http\Controllers\clientesController;
 use App\Http\Controllers\dashbordController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\projetosController;
+use App\Http\Controllers\rastreioController;
 use App\Models\projeto;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -21,6 +22,11 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 */
+
+Route::prefix('rastreio')->group(function(){
+    Route::get('/', [rastreioController::class, 'index'])->name('rastreio-index');
+    Route::post('/', [rastreioController::class, 'buscar'])->name('rastreio-buscar');
+});
 
 Route::prefix('dashbord')->group(function(){
     Route::get('/', [dashbordController::class, 'index'])->name('dashbord-index');
