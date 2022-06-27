@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\cliente;
+use App\Models\projeto;
 use Illuminate\Http\Request;
 
 class clientesController extends Controller
@@ -57,7 +58,10 @@ class clientesController extends Controller
     }
 
     public function delete($id){
-        cliente::where('id',$id)->delete();
+        $verificacao = projeto::where('cliente_id', $id)->count();
+        if($verificacao == 0){
+            cliente::where('id',$id)->delete();
+        }
         return redirect()->route('cliente-index');
     }
 

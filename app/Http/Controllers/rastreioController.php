@@ -18,9 +18,11 @@ class rastreioController extends Controller
 
         $codigo = $request->get('codigo');
         $status = projeto::where('id', $codigo)->first();
-        return view('rastreio.exibe',['status'=>$status]); 
-    
-
+        if($status != null){
+            return view('rastreio.exibe',['status'=>$status]); 
+        }else{
+            return redirect()->route('rastreio-index');
+        }
     }
 
 

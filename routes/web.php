@@ -23,6 +23,12 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 */
 
+Route::get('/', function () {
+
+    return view('login.login');
+  
+    });
+
 Route::prefix('rastreio')->group(function(){
     Route::get('/', [rastreioController::class, 'index'])->name('rastreio-index');
     Route::post('/', [rastreioController::class, 'buscar'])->name('rastreio-buscar');
@@ -32,13 +38,6 @@ Route::prefix('dashbord')->group(function(){
     Route::get('/', [dashbordController::class, 'index'])->name('dashbord-index');
     
 });
-
-Route::prefix('login')->group(function(){
-    Route::get('/', [loginController::class, 'index'])->name('login-index');
-    Route::post('/', [loginController::class, 'autenticar'])->name('login-autenticar');
-    
-});
-
 
 
 Route::prefix('projeto')->group(function(){
@@ -60,10 +59,5 @@ Route::prefix('cliente')->group(function(){
     Route::delete('/{id}', [clientesController::class, 'delete'])->where('id', '[0-9]+')->name('cliente-delete');
 });
 
-
-
-Route::fallback(function(){
-    return "Erro 404";
-});
 
 
